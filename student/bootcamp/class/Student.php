@@ -58,7 +58,7 @@ class Student extends Database{
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function deleteMhsById($id){
+    public static function deleteMhsById($id){
 
         $database = new Database();
         $query = "DELETE FROM `student` WHERE id = ?";
