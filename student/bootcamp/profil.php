@@ -1,6 +1,8 @@
 <html>
-<?php include("header.php") ?>
-<?php include("class/Student.php") ?>
+<?php 
+include("header.php");
+include("class/Student.php");
+?>
 <h1>Profil Anggota</h1>
 <div id="div_form">
     <form id="form_cari" name = "form_cari" action="profil.php" method="GET">
@@ -9,7 +11,7 @@
     </form>
 </div>
 <?php
-$cari = filter_var(@$_GET['txt_cari'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$cari = filter_var((@$_GET['txt_cari']), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 // $cari = @$_GE['txt_cari'];
 if($cari){
     // var_dump($cari);
@@ -21,7 +23,7 @@ if($cari){
 ?>
 <div>
     <ol>
-        <?php foreach($hasil as $row):?>
+        <?php foreach(@$hasil as $row):?>
         <li><a href="profil.php?id=<?php echo $row['id'];?>"><?php echo $row['nama']."-".$row['nim'];?></a></li>
         <?php endforeach;?>
     </ol>
